@@ -1,0 +1,17 @@
+.officerList {
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;    
+    justify-content: space-between;
+
+}
+.officer__card {
+    border: 3px dotted black;
+    margin: 10px;
+    width: 250px
+
+}
+.officer__name {
+    font-weight: bold;
+}
