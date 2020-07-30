@@ -1,0 +1,25 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Note about felon",
+      "timestamp": "07/29/2020",
+      "author": "Suzie Police",
+      "content": "I think Colonel Mustard did it."
+    },
+    {
+      "title": "jhiuhiu",
+      "author": "huihiuhuih",
+      "content": "uihuih",
+      "timestamp": 1596035140108,
+      "id": 2
+    },
+    {
+      "title": "testing note",
+      "author": "Bryan",
+      "content": "This is a test",
+      "timestamp": 1596125843479,
+      "id": 3
+    }
+  ]
+}
