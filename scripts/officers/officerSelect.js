@@ -5,24 +5,27 @@ const contentTarget = document.querySelector(".filters__officer")
 const eventHub = document.querySelector(".container")
 
 contentTarget.addEventListener("change", (changeEvent) => {
-    const customEvent = new CustomEvent("officerSelected", {
-        detail: {
-            officerId: changeEvent.target.value
-        }
-    })
-    eventHub.dispatchEvent(customEvent)
+    if (changeEvent.target.id === "officerSelect") {
+
+        const customEvent = new CustomEvent("officerSelected", {
+            detail: {
+                officerId: changeEvent.target.value
+            }
+        })
+        eventHub.dispatchEvent(customEvent)
+    }
 })
 
-const render = officerCollection => {
+const render = (officerCollection) => {
     contentTarget.innerHTML = `
     <select class="dropdown" id="officerSelect">
         <option value="0">Please select an officer...</option>
         ${
-            officerCollection.map(
-                officerObject => {
-                    return `<option value="${ officerObject.id }">${officerObject.name}</option>`
-                }
-            ).join("")
+        officerCollection.map(
+            officerObject => {
+                return `<option value="${officerObject.id}">${officerObject.name}</option>`
+            }
+        ).join("")
         }
     </select>
 `
@@ -30,7 +33,7 @@ const render = officerCollection => {
 
 export const officerSelect = () => {
     getOfficers().then(() => {
-       
+
         const officers = useOfficers()
 
         render(officers)
