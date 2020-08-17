@@ -2,6 +2,7 @@ import { useCriminals, getCriminals } from "./criminalDataProvider.js";
 import { criminalHTMLConverter } from "./criminalHTMLConverter.js";
 import { useConvictions } from "../convictions/convictionProvider.js";
 import { useOfficers } from "../officers/OfficerProvider.js"
+import { associatesDialog } from "./associatesDialog.js";
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -32,13 +33,16 @@ eventHub.addEventListener("officerSelected", (officerSelectedEvent) => {
         return parseInt(officerThatWasSelected) === officer.id
     })
     const allCriminals = useCriminals()
+    
 
-    const filteredCriminals = allCriminals.filter((currentCriminalObject) => {
+    const filteredByOfficer = allCriminals.filter((currentCriminalObject) => {
         return foundOfficerObject.name === currentCriminalObject.arrestingOfficer
     })
-    render(filteredCriminals)
+    render(filteredByOfficer)
 
 })
+
+
 
 const render = (criminalArray) => {
     
@@ -52,6 +56,7 @@ const render = (criminalArray) => {
     <article class="criminalList">
         ${ criminalHTMLRepresentations }
     </article>
+    ${ associatesDialog() }
     `
 }
 
