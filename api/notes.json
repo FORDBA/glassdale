@@ -1,20 +1,12 @@
 {
   "notes": [
     {
-      "title": "new note",
+      "title": "All notes were deleted",
       "author": "Bryan",
-      "content": "today is a day",
-      "criminalID": 16,
-      "timestamp": 1597417628070,
-      "id": 5
-    },
-    {
-      "title": "got it!",
-      "author": "Bryan",
-      "content": "Ressie did it",
-      "criminalID": 18,
-      "timestamp": 1597418152030,
-      "id": 6
+      "content": "new note - new text",
+      "criminalID": 11,
+      "timestamp": 1597690559885,
+      "id": 1
     }
   ]
 }

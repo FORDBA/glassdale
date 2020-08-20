@@ -12,7 +12,7 @@ eventHub.addEventListener("click", clickEvent => {
    } 
 })
 
-export const criminalHTMLConverter = (criminalObj) => {
+export const criminalHTMLConverter = (criminalObj, facilities) => {
     return `
         <section class="criminal__card">
             <div class="criminal__name">${criminalObj.name}</div>
@@ -21,6 +21,16 @@ export const criminalHTMLConverter = (criminalObj) => {
             <div class="criminal__crime">Crime: ${criminalObj.conviction}</div>
             <div class="criminal__termStart">Term Start: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</div>
             <div class="criminal__termEnd">Term End: ${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</div>
+
+            <ul>
+            ${
+                facilities.map(
+                    (facility) => {
+                        return `<li>${facility.facilityName}</li>`
+                    }
+                ).join("")
+            }
+            </ul>
             <button id='showAlibi--${criminalObj.id}'>Show Alibi</button>
 
         </section>
