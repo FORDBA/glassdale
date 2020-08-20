@@ -7,6 +7,11 @@ import { useCriminals } from "../criminals/criminalDataProvider.js";
 const contentTarget = document.querySelector(".noteListContainer")
 const eventHub = document.querySelector(".container")
 
+eventHub.addEventListener("noteStateChanged", customEvent => {
+    const allNotes = useNotes()
+    render(allNotes)
+})
+
 
 
 const render = (notes) => {
